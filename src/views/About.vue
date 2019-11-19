@@ -1,5 +1,18 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div id="app-2">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds to see my dynamically bound
+      title!
+    </span>
   </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return{
+      message: "You loaded this page on " + new Date().toLocaleString() 
+    }
+  }
+}
+</script>script
