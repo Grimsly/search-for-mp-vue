@@ -1,5 +1,10 @@
 # search-for-mp-vue
 
+## Project Description
+```
+Vue app that uses the opennorth API to find Canadian MPs local to the Zip Code entered
+```
+
 ## Project setup
 ```
 npm install
