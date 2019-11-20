@@ -19,15 +19,12 @@ export default {
   methods: {
     getMP: function() {
       var mpdata = this.mpdata;
-      console.log("check");
-      console.log();
       return mpdata.representatives_centroid.filter(
         rep => rep.elected_office === "MP"
       );
     },
     checkEmpty: function() {
       if (this.mpdata === undefined) {
-        console.log("hey");
         return false;
       } else {
         this.mp = this.mpdata.representatives_centroid.filter(

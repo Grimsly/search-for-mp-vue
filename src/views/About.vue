@@ -1,18 +1,26 @@
 <template>
   <div id="app-2">
-    <span v-bind:title="message">
-      Hover your mouse over me for a few seconds to see my dynamically bound
-      title!
-    </span>
+    <p>
+      This is a site that allows you search up your local MP and their contacts
+    </p>
+    <p>
+      Just type in your Postal Code and watch it go!
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      message: "You loaded this page on " + new Date().toLocaleString() 
-    }
-  }
 }
-</script>script
+</script>
+
+<style lang="scss" scoped>
+  p{
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+  }
+  #app-2{
+    margin-top: 4rem;
+  }
+</style>
