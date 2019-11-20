@@ -4,41 +4,31 @@
       v-model="number"
       v-on:keyup.enter="search"
       placeholder="Enter iterations"
+      maxlength="6"
     />
-    <div>{{ mpdata }}</div>
-    <For v-bind:todos="todos" v-bind:number="num" />]
+    <!-- <div>{{ mpdata }}</div> -->
+    <MPDisplay v-bind:mpdata="mpdata" />
   </div>
 </template>
 
 <script>
-import For from "../components/For";
+import MPDisplay from "../components/MPDisplay";
 import axios from "axios";
 
 export default {
   name: "home",
   components: {
-    For
+    MPDisplay
   },
   data() {
     return {
-      todos: [
-        {
-          hey: 1
-        },
-        {
-          hey: 2
-        },
-        {
-          hey: 3
-        }
-      ],
-      mpdata: [],
-      num: 1
+      mpdata: undefined,
+      number: 0
     };
   },
   methods: {
     search: function() {
-      var num = this.number;
+      var num = this.number.toUpperCase();
       const url = "http://localhost:8080/postcodes/" + num;
       console.log(num);
       axios
