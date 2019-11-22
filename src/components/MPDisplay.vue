@@ -3,6 +3,9 @@
     <div class="mp-image" :style="{ backgroundImage: 'url(' + mp[0]['photo_url'] + ')' }" />
     <MPInfo :info="mp[0]"/>
   </div>
+  <div v-else>
+    <span>Sorry, there are no results for the entry given</span>
+  </div>
 </template>
 
 <script>
@@ -53,5 +56,10 @@ export default {
 }
 .iteration {
   border-bottom: 1px solid black;
+}
+
+span {
+  font-size: 20px;
+  font-style: italic;
 }
 </style>

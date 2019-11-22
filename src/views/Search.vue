@@ -6,8 +6,7 @@
       placeholder="Postal Code"
       maxlength="6"
     />
-    <!-- <div>{{ mpdata }}</div> -->
-    <MPDisplay class="profile" v-bind:mpdata="mpdata" />
+    <MPDisplay v-if="enterKeyPresed" class="profile" v-bind:mpdata="mpdata" />
   </div>
 </template>
 
@@ -23,11 +22,13 @@ export default {
   data() {
     return {
       mpdata: undefined,
-      number: ""
+      number: "",
+      enterKeyPresed: false
     };
   },
   methods: {
     search: function() {
+      this.enterKeyPresed = true;
       var num = this.number.toUpperCase();
       const url = "http://localhost:8080/postcodes/" + num;
       axios
